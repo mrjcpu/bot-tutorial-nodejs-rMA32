@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;  botRegexStand = /^\/stand/i;  botRegexPlayers = /^\/players/i;  botRegexTeams = /^\/teams/i;  botRegexSched = /^\/schedule/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;  botRegexStand = /^\/stand/i;  botRegexSlicc = /^\/slicc/i;  botRegexPlayers = /^\/players/i;  botRegexTeams = /^\/teams/i;  botRegexSched = /^\/schedule/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/
@@ -27,6 +27,11 @@ function respond() {
   else if(request.text && botRegexStand.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/NAZ925/standings");
+    this.res.end();
+  }
+    else if(request.text && botRegexSlicc.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://scontent-lax3-1.xx.fbcdn.net/hprofile-xap1/v/t1.0-1/p100x100/12143080_1240077596019649_8371996330301655338_n.jpg?oh=e256bb2dda1669ff8f616360dca37658&oe=57BC0861");
     this.res.end();
   }
   else if(request.text && botRegexPlayers.test(request.text)) {
